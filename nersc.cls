@@ -186,7 +186,7 @@
     \begin{column}[T]{0.5\paperwidth}
     % \begin{minipage}[t][0.5\textwidth][t]{\textwidth}
     \begin{center}
-        \includegraphics[width=0.5\paperwidth, height=0.5\paperwidth]{nersc_titlepage}
+        \includegraphics[width=0.5\paperwidth, height=0.5\paperwidth]{nersc_science}
     \end{center}
     % \end{minipage}
     \end{column}
