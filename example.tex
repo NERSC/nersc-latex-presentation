@@ -1,0 +1,128 @@
+\documentclass[xcolor=dvipsnames,compress,10pt]{nersc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[Short Title]{Presentation Title}
+\subtitle{Presentation Subtitle}
+\author[Short Author]{{\Large Insert Author of, B.S.} \\
+\email{doctorwho@lbl.gov}}
+\meeting{Name of meeting/forum, \eg NERSC App-Readiness}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+%
+\begin{frame}[label=title,plain]
+    \maketitle
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section{Insert section title}
+
+%------------------------------------------------------------------------------%
+%
+\subsection{}
+\begin{frame}[t]
+\frametitle{Use frametitle as frame title}
+    \begin{itemize}
+        \item Which supercomputer facility should users run on?
+        \begin{itemize}
+            \item Many choices:
+            \begin{itemize}
+                \item LBL
+                \item ANL
+                \item LANL
+                \item LLNL
+                \item \dots~etc.
+            \end{itemize}
+        \end{itemize}
+        \item Why choose NERSC @ LBL?
+        \begin{itemize}
+            \item Ubiquitous talent, skills, and knowledge
+        \end{itemize}
+        \item Key takeaways:
+        \begin{itemize}
+            \item Bay area housing is deplorably expensive
+            \item Weather is pretty nice though
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section{Using Code}
+
+%------------------------------------------------------------------------------%
+%
+\subsection{Use subsection as frame title}
+\begin{frame}[fragile]
+    \begin{itemize}
+        \item Some code formatting
+        \begin{columns}[T]
+            \begin{column}[T]{0.2\textwidth}
+                \begin{itemize}
+                    \setlength\itemsep{0.5em}
+                    \item \lstinlinec{class Foo;}
+                    \item \lstinlinepy{import os}
+                \end{itemize}
+            \end{column}
+            \begin{column}[T]{0.65\textwidth}
+                \begin{itemize}
+                    \setlength\itemsep{0.5em}
+                    \item \lstinlinec{void* foo = (void*) malloc(n * sizeof(int));}
+                    \item \lstinlinepy|print("{}".format(sys.argv))|
+                \end{itemize}
+            \end{column}
+        \end{columns}
+    \end{itemize}
+\vfill
+
+\begin{itemize}
+    \item C or \CPP code
+\end{itemize}
+
+\vfill
+
+\begin{lstlisting}[style=customc]
+    // create typedef
+    typedef std::vector<double> dVector_t;
+    dVector_t vec(10, 0.0);
+    // parallel loop
+    #pragma omp parallel_for
+    for(unsigned i = 0; i < vec.size(); ++i)
+        if(fabs(vec.at(i)) < std::numeric_limits<double>::epsilon())
+            std::cout << "Why are you using OpenMP in C++?" << std::endl;
+\end{lstlisting}
+
+\vfill
+
+\begin{itemize}
+    \item Python code
+\end{itemize}
+
+\begin{lstlisting}[style=custompy]
+    import os
+    import sys
+
+    if __name__ == "__main__":
+        # print program name
+        print("{}".format(sys.argv[0]))
+\end{lstlisting}
+
+\vfill
+
+\end{frame}
+
+%------------------------------------------------------------------------------%
+%
+% \appendix
+% \backupbegin
+%
+% \backupend
+
+\end{document}
+

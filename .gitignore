@@ -240,3 +240,28 @@ TSWLatexianTemp*
 
 # generated if using elsarticle.cls
 *.spl
+
+*~
+*.ps
+*.dvi
+*.aux
+*.toc
+*.idx
+*.ind
+*.ilg
+*.log
+*.out
+*.vrb
+*.brf
+*.lof
+*.lot
+*.blg
+*.bbl
+*.snm
+*.nav
+*.fls
+*.DS_Store
+*.kate-swp
+*.backup
+*.fdb_latexmk
+*.synctex.gz
