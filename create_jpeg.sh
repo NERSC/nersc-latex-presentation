@@ -10,6 +10,7 @@ echo "${BASH_SOURCE[0]}"
 if [ -z "$(which convert)" ]; then
     echo "${BASH_SOURCE[0]} requires convert program"
     echo "convert program is a member of the ImageMagick suite of tools"
+    exit 1
 fi
 
 # default settings (env will override)
@@ -31,7 +32,7 @@ fi
 
 for j in ${FORMATS}
 do
-    for i in $(filefind ${SOURCE_DIR} | egrep "\.${j}$")
+    for i in $(find ${SOURCE_DIR} -type f | egrep "\.${j}$")
     do
         NAME=$(basename ${i})
         INPUT=${i}
