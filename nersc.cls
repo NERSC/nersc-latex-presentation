@@ -51,7 +51,7 @@
     showstringspaces=false,
     basicstyle=\footnotesize\ttfamily,
     keywordstyle=\bfseries\color{mygreen},
-    commentstyle=\itshape\color{red},
+    commentstyle=\ttfamily\color{red},
     identifierstyle=\color{myblue},
     stringstyle=\color{mypink},
     keepspaces=true,
@@ -70,7 +70,7 @@
     showstringspaces=false,
     basicstyle=\footnotesize\ttfamily,
     keywordstyle=\bfseries\color{mygreen},
-    commentstyle=\itshape\color{red},
+    commentstyle=\ttfamily\color{red},
     identifierstyle=\color{myblue},
     stringstyle=\color{mypink},
     keepspaces=true,
@@ -87,14 +87,14 @@
     xleftmargin=\parindent,
     language=Bash,
     showstringspaces=false,
-    basicstyle=\footnotesize\ttfamily,
+    basicstyle=\normalsize\ttfamily,
     keywordstyle=\color{black},
     commentstyle=\color{red},
     identifierstyle=\color{black},
     stringstyle=\color{mypink},
     keepspaces=true,
     tabsize=2,
-    numberstyle=\tiny\color{mygray},
+    numberstyle=\normalsize\color{mygray},
     numbers=none,
     columns=flexible
 }
@@ -107,6 +107,7 @@
 \newcommand{\inlinecodestr}[1]{\colorbox{white}{\lstinline[basicstyle=\ttfamily\color{mypink}]|#1|}}
 \newcommand{\lstinlinec}{\lstinline[columns=fixed,style=customc]}
 \newcommand{\lstinlinepy}{\lstinline[columns=fixed,style=custompy]}
+\newcommand{\lstinlineshell}{\lstinline[columns=fixed,style=customshell]}
 \newcommand{\eg}{{\it e.g.,~}}
 \newcommand{\ie}{{\it i.e.,~}}
 \newcommand{\tilda}[0]{{\texttt{\raise.17ex\hbox{$\scriptstyle\sim$}}}}
