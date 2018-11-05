@@ -26,7 +26,7 @@
 %
 % Colors
 %
-\definecolor{mygreen}{rgb}{0,0.75,0}
+\definecolor{mygreen}{rgb}{0,0.6,0.0}
 \definecolor{myblue}{rgb}{0.1,0.1,0.9}
 \definecolor{mypink}{rgb}{1.0,0.08,0.58}
 \definecolor{mygray}{rgb}{0.1,0.1,0.1}
@@ -88,9 +88,9 @@
     language=Bash,
     showstringspaces=false,
     basicstyle=\normalsize\ttfamily,
-    keywordstyle=\color{black},
-    commentstyle=\color{red},
-    identifierstyle=\color{black},
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    identifierstyle=\color{blue},
     stringstyle=\color{mypink},
     keepspaces=true,
     tabsize=2,
@@ -313,12 +313,23 @@
 \setbeamercolor{date in head/foot}{fg=nerscblue,bg=white}
 % \setbeamercolor{palette primary}{fg=nerscblue,bg=gray}
 % \setbeamercolor{palette secondary}{fg=nerscblue,bg=gray}
-% \setbeamercolor{palette tertiary}{fg=nerscblue,bg=gray}
-% \setbeamercolor{palette quaternary}{fg=nerscblue,bg=gray}
+\setbeamercolor{palette tertiary}{fg=nerscblue,bg=gray}
+\setbeamercolor{palette quaternary}{fg=nerscblue,bg=gray}
 \setbeamercolor{background canvas}{bg=white}
-% \setbeamercolor{alerted text}{fg=nerscblue}
+\setbeamercolor{alerted text}{bg=gray,fg=nerscblue}
+\setbeamercolor{block title}{bg=nerscblue, fg=white}
+\setbeamercolor{block body}{bg=white, fg=nerscblue}
+% \setbeamercolor{alertblock title}{bg=nerscblue, fg=gray}
+% \setbeamercolor{alertblock body}{bg=gray!10, fg=nerscblue}
+% \setbeamercolor{exampleblock title}{bg=nerscblue, fg=gray}
+% \setbeamercolor{exampleblock body}{bg=gray!10, fg=nerscblue}
 
 
+% this enables a block with custom color schemes
+\newenvironment{variableblock}[3]{%
+    \setbeamercolor{block title}{#2}
+    \setbeamercolor{block body}{#3}
+    \begin{block}{#1}}{\end{block}}
 %------------------------------------------------------------------------------%
 %
 % beamer template
@@ -342,3 +353,83 @@
 Lawrence Berkeley National Laboratory \\[1ex]}
 \date[\today]{\today}
 
+%------------------------------------------------------------------------------%
+% use this command to include an external slide
+%
+
+\newcommand{\imageslide}[2]{%
+    \begin{frame}[squeeze] %
+        \vfill %
+        \begin{center} %
+            \includegraphics[width=#2,keepaspectratio]{#1} %
+        \end{center} %
+        \vfill %
+    \end{frame} %
+}
+
+%------------------------------------------------------------------------------%
+% use this command to include an external slide with a title in the 
+% upper-right hand corner
+%
+\newcommand{\imageslidewithsubsection}[3]{%
+    \subsection{#3}
+    \begin{frame}[squeeze] %
+        \vfill %
+        \begin{center} %
+            \includegraphics[width=#2,keepaspectratio]{#1} %
+        \end{center} %
+        \vfill %
+    \end{frame} %
+    \subsection{}
+}
+
+%------------------------------------------------------------------------------%
+% use this command to include an external slide with a frametitle
+%
+\newcommand{\imageslidewithtitle}[3]{%
+    \begin{frame}[squeeze] %
+        \frametitle{#3}
+        \vfill %
+        \begin{center} %
+            \includegraphics[width=#2,keepaspectratio]{#1} %
+        \end{center} %
+        \vfill %
+    \end{frame} %
+}
+
+%------------------------------------------------------------------------------%
+% use this commad to create a transition slide for signaling a section change
+%
+\newcommand{\sectiontransitionslide}[1]{%
+\section{} %
+\subsection{} %
+\begin{frame} %
+    \vfill %
+    \begin{center} %
+        {\centering\fontsize{20}{10}\selectfont \textbf{\textcolor{nerscblue}{#1}}} %
+    \end{center} %
+    \vfill %
+\end{frame} %
+\section{#1}}
+
+%------------------------------------------------------------------------------%
+% use this command to create a transition slide that signals a topic change
+% within a section
+%
+\newcommand{\transitionslide}[1]{%
+\subsection{} %
+\begin{frame} %
+    \vfill %
+    \begin{center} %
+        {\fontsize{20}{10}\selectfont \textcolor{nerscblue}{\secname}} %
+
+        \vfill
+        {\centering\fontsize{20}{10}\selectfont \textbf{\textcolor{nerscblue}{#1}}} %
+
+        \vfill
+    \end{center} %
+    \vfill %
+\end{frame} %
+\subsection{#1}}
+
+%------------------------------------------------------------------------------%
